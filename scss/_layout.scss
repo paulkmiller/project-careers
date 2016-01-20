@@ -1,0 +1,661 @@
+@import "breakpoint";
+
+// settings
+// --------
+
+$susy: (
+  columns: 10,
+  gutters: 2/10,
+  gutter-position: split,
+);
+
+footer {
+  @include bleed(1em);
+}
+
+// Mobile First Y'all
+// ------------------
+body {
+  @include container(100%);
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.resources_container {
+  padding: 10px 0;
+  h1{
+    margin: 0;
+    font-size: 1em;
+  }
+  .filter-resources{
+    padding: 10px 20px;
+  }
+}
+
+
+ul button {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.audience,
+.type,
+.star {
+  height: 50px;
+  h2{
+    display: inline-block;
+    font-size: .75em;
+  }
+  button{
+    font-size: .7em;
+  }
+    ul{
+      display: inline-block;
+      padding-left: 20px;
+    }
+}
+
+.logo_container {
+  background-color: #fff;
+  padding: 30px 20px 56px;
+  .logo{
+    min-height: 226px;
+    background-image:url("../img/ProjectCareerLogo.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+  }
+}
+
+.type ul {
+  margin-left: 40px;
+}
+
+.star {
+  padding-bottom: 9px;
+  ul {
+    margin-left: 35px;
+  }
+}
+
+.audience ul {
+  margin-left: 8px;
+}
+
+.card {
+  img {
+    width: 100%;
+  }
+  .card_inner{
+    padding: 10px;
+  }
+}
+
+.about {
+  background: rgba(255,255,255,.6);
+  padding: 1px 20px 20px 20px;
+}
+
+.about_header {
+  margin-top: 0;
+  .logo img{
+    display: block;
+    margin: auto;
+
+  }
+}
+
+/* ==========================================================================
+    Media Query Dynasty
+   ========================================================================== */
+
+$iphone4: 320px 480px;
+$tablet-small: 480px 767px;
+$ipad: 768px 1023px;
+$browser-small:1024px 1224px;
+$browser-medium:1225px 1599px;
+$browser-large:1600px 1999px;
+$browser-xLarge:2000px;
+
+@include breakpoint($iphone4) {
+  .resources_container {
+    padding: 10px 0;
+    h1{
+      margin: 0;
+      font-size: 1em;
+    }
+    .filter-resources{
+      padding: 10px;
+      p{
+        font-size: .85em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .star{
+        padding-bottom: 0px;
+      }
+    }
+  }
+
+  ul button {
+    list-style-type: none;
+    display: inline-block;
+  }
+
+  .audience,
+  .type,
+  .star {
+    height: 50px;
+    margin-bottom: 5px;
+    h2{
+      margin: 10px 500px 0 auto;
+      display: inline-block;
+      font-size: .9em;
+    }
+    button{
+      padding: 5px;
+      font-size: .85em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+      ul{
+        display: inline-block;
+        padding: 0;
+        margin: 5px 0 0 3px;
+        font-size: .9em;
+      }
+  }
+
+  .logo_container {
+    padding: 10px 0 20px 0;
+    .logo{
+      min-height: 113px;
+      background-image:url("../img/ProjectCareerLogo.png");
+      background-repeat:no-repeat;
+      background-size:contain;
+      background-position:center;
+    }
+  }
+
+  .welcome {
+    font-size: .8em;
+  }
+
+  .card {
+    img {
+      width: 100%;
+    }
+    .card_inner{
+      padding: 10px;
+    }
+  }
+
+  .about_header {
+    margin-top: 0;
+    .logo{
+      margin: 0;
+      padding: 10px 0 20px 0;
+    }
+    img {
+      max-height: 113px;
+    }
+  }
+
+  .about {
+    background: rgba(255,255,255,.6);
+    padding: 1px 20px 20px 20px;
+    h1{
+      font-size: 2em;
+    }
+    p, li {
+      font-size: .9em;
+    }
+  }
+}
+
+@include breakpoint($tablet-small) {
+  .logo_container {
+    padding: 10px 20px 20px;
+    h1.logo {
+      min-height: 113px;
+    }
+  }
+}
+
+@include breakpoint($ipad) {
+  body{
+    @include container(95%);
+  }
+  .grid, .resources_container {
+    @include span(7.5 at 3.5);
+  }
+  .grid .card {
+    @include span(3.125 at 3.5);
+  }
+  header {
+    @include span(2.5 at 1);
+    .welcome{
+      padding: 2% 10% 10%;
+      h1{
+      font-size: 1.2em;
+      }
+      p, a{
+        font-size: .8em;
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .logo_container {
+    margin-bottom: 20px;
+    padding: 0 10px 3px;
+    .logo{
+      min-height: 217px;
+      padding: 0px;
+    }
+  }
+  .audience,
+  .type,
+  .star {
+    height: 50px;
+    h2{
+      font-size: .8em;
+    }
+    ul button{
+      padding: 5px 10px;
+    }
+  }
+
+  .resources_container, header {
+    margin-top: 50px;
+  }
+
+  section.resources_container{
+    padding: 0;
+    .filter-resources{
+      padding: 10px;
+    }
+    h2{
+      font-size: .8em;
+    }
+    p{
+    font-size: .74em;
+    }
+    .type ul {
+      margin-left: 35px;
+    }
+    .star {
+      padding-bottom: 3px;
+      ul {
+      margin-left: 30px;
+      }
+    }
+  }
+  .grid .card {
+    margin: 20px 0 0 0;
+    img{
+      width: 100%;
+    }
+    .card_inner{
+    padding: 10px 7px 0;
+    }
+    .card_resource{
+      font-size: 1em;
+    }
+    .card_title{
+      font-size: 0.85em;
+    }
+    .card_excerpt{
+      font-size: .8em;
+    }
+    .card_audience {
+      font-size: .75em;
+    }
+    .fa, div.card_tag p{
+      font-size: .9em;
+    }
+  }
+  .about {
+    margin: 30px auto 30px auto;
+  }
+}
+
+@include breakpoint($browser-small) {
+  body{
+    @include container(80%);
+  }
+  .grid, .resources_container {
+    @include span(7.5 at 3.5);
+  }
+  header {
+    @include span(2.5 at 1);
+  }
+  .grid .card {
+    @include span(3.125 at 3.5);
+  }
+
+  .welcome {
+    padding: 2% 10% 10%;
+    h1{
+      font-size: 1.7em;
+    }
+    p, a{
+      font-size: .85em;
+      line-height: 1.5em;
+    }
+  }
+
+  .resources_container, header {
+    margin-top: 50px;
+  }
+
+  section.resources_container{
+    padding: 0;
+    p{
+      font-size: .8em;
+    }
+    h2{
+      font-size: 1.1em;
+    }
+  }
+
+  .logo_container {
+    margin-bottom: 20px;
+        padding: 50px 10px 60px;
+    .logo{
+      min-height: 126px;
+    }
+  }
+
+  .audience,
+  .type,
+  .star {
+    height: 53px;
+    h2{
+      font-size: .9em;
+    }
+    ul button{
+      font-size: .8em;
+      padding: 8px 12px;
+    }
+  }
+  .grid .card {
+    margin: 20px 0 0 0;
+    img{
+      width: 100%;
+    }
+    .card_inner{
+    padding: 10px 5% 0;
+    }
+    .card_excerpt{
+      font-size: .9em;
+    }
+    .card_audience {
+  }
+    .about {
+      margin: 50px;
+    }
+  }
+}
+
+
+@include breakpoint($browser-medium) {
+  body{
+    @include container(75%);
+  }
+  .grid, .resources_container {
+    @include span(7.5 at 3.5);
+  }
+  header {
+    @include span(2.5 at 1);
+  }
+  .grid .card {
+    @include span(3.125 at 3.5);
+  }
+  .audience,
+  .type,
+  .star {
+    height: 49px;
+    h2 {
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+    ul button {
+      padding: 5px 10px !important;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-left: 1px solid #dcdcdc;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-right: 1px solid #dcdcdc;
+      }
+    }
+  }
+  .logo_container {
+    margin-bottom: 20px;
+    padding: 0px 20px 24px;
+  }
+  .welcome{
+    padding: 2% 10% 10%;
+    h1 {
+      font-size: 1.4em;
+    }
+    p, a {
+      font-size: .85em;
+      line-height: 1.5em;
+    }
+  }
+
+  .resources_container, header {
+    margin-top: 50px;
+  }
+
+  section.resources_container {
+    p {
+      font-size: .9em;
+    }
+  }
+  .grid .card {
+    margin: 20px 0 0 0;
+    img{
+      width: 100%;
+    }
+    .card_inner{
+    padding: 10px 5% 0;
+    }
+    .card_excerpt{
+      font-size: .9em;
+    }
+  }
+  .about {
+    margin: 50px auto;
+  }
+}
+
+@include breakpoint($browser-large) {
+  body{
+    @include container(70%);
+  }
+  .grid, .resources_container {
+    @include span(7.5 at 3.5);
+  }
+  header {
+    @include span(2.5 at 1);
+  }
+  .grid .card {
+    @include span(3.125 at 3.5);
+  }
+  .logo_container {
+    margin-bottom: 20px;
+    padding: 0 20px 56px;
+    .logo{
+      min-width: initial;
+    }
+  }
+  .audience,
+  .type,
+  .star {
+    height: 59px;
+    h2 {
+      font-weight: 500;
+      font-size: 1em;
+    }
+    ul button {
+      padding: 10px 20px;
+      margin-left: -5px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .resources_container, header {
+    margin-top: 50px;
+  }
+
+  section.resources_container {
+    padding: 10px 0 5px 0;
+    h2 {
+      margin: 0;
+      font-size: 1.3em;
+    }
+    p {
+      margin: 0 0 10px;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+  }
+
+  .active {
+    background: #0267a8 !important;
+    color: #fff !important;
+  }
+
+  .welcome {
+    padding: 2% 10% 10%;
+    line-height: 1.75em;
+    font-weight: lighter;
+    h1{
+      font-size: 1.5em;
+      font-weight: lighter;
+      letter-spacing: .5px;
+    }
+    p, a {
+      font-size: .85em;
+      line-height: 1.5em;
+    }
+  }
+
+  .grid .card {
+    margin: 20px 0 0 0;
+    img{
+      width: 100%;
+    }
+    .card_inner{
+    padding: 10px 10px 0;
+    }
+    .card_excerpt{
+      font-size: .9em;
+    }
+  }
+  .about {
+    margin: 50px;
+  }
+}
+
+@include breakpoint($browser-xLarge) {
+  body{
+    @include container(50%);
+  }
+  .grid, .resources_container {
+    @include span(7.5 at 3.5);
+  }
+  header{
+    @include span(2.5 at 1);
+  }
+  .grid .card {
+    @include span(3.125 at 3.5);
+  }
+
+  .logo_container {
+    margin-bottom: 20px;
+    padding: 20px 20px 56px;
+    .logo{
+      min-width: initial;
+    }
+  }
+  .audience,
+  .type,
+  .star {
+    height: 67px;
+    h2 {
+      font-weight: 500;
+      font-size: 1em;
+    }
+    ul button {
+      padding: 10px 20px;
+      margin-left: -5px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .resources_container, header {
+    margin-top: 50px;
+  }
+
+  .resources_container {
+    background: #fff;
+    h1 {
+      margin: 0;
+      font-size: 1.3em;
+    }
+    p {
+      margin: 0 0 10px;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+  }
+
+  .active {
+    background: #0267a8 !important;
+    color: #fff !important;
+  }
+
+  .welcome {
+    padding: 2% 10% 10%;
+    line-height: 1.75em;
+    h1{
+      font-size: 1.5em;
+      font-weight: lighter;
+      letter-spacing: .5px;
+    }
+    p, a {
+      font-size: .85em;
+      line-height: 1.5em;
+    }
+  }
+  .grid .card {
+    margin: 20px 0 0 0;
+    img{
+      width: 100%;
+    }
+    .card_inner{
+    padding: 10px 10px 0;
+    }
+    .card_excerpt{
+      font-size: .9em;
+    }
+  }
+  .about {
+    margin: 50px auto;
+  }
+}
