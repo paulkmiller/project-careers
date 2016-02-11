@@ -9,7 +9,7 @@
   });
 
   // store filter for each group
-  var filters = {};
+  // var filters = {};
 
   $('.filters').on('click', '.button', function() {
     var filters = '';
